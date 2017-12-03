@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{diot.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+        
+      <ion-item>
+          <ion-avatar item-start>
+              <img [src]="diot.luzicon">
+          </ion-avatar>
+          <ion-label>Luz</ion-label>
+          <ion-toggle [(ngModel)]="sensores.luz" (ngModelChange)="LuzChange()"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+          <ion-avatar item-start>
+              <img [src]='diot.presenciaicon'>
+          </ion-avatar>        
+          Presencia
+          <ion-icon name="person" item-end></ion-icon>
+      </ion-item>
+
+      <ion-item>
+          <ion-avatar item-start>
+              <img [src]='diot.temperaturaicon'>
+          </ion-avatar>
+          Temperatura
+          <button ion-button outline item-end>{{sensores.temp}}</button>
+      </ion-item>
+       
+       
+  </ion-list>
+
+
+</ion-content>
+

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Configuración
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>URL Servidor</ion-label>
+            <ion-input type="text" [(ngModel)]="configuracion.url"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Usuario</ion-label>
+              <ion-input type="text" [(ngModel)]="configuracion.usr"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="text" [(ngModel)]="configuracion.pss"></ion-input>
+          </ion-item>
+    </ion-list>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button
+                    block
+                    icon-left
+                    [disabled]=" configuracion.url.length < 1 || configuracion.usr.length < 1 || configuracion.pss.length < 1"
+                    (click)="Grabar_Configuracion()">
+                <ion-icon name="cloud-download"></ion-icon>
+                Grabar
+            </button>
+          </ion-col>
+
+        </ion-row>
+    
+    </ion-grid>
+
+</ion-content>
